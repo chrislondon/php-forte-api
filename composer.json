@@ -1,0 +1,19 @@
+{
+  "name": "chrislondon/forte-api",
+  "description": "PHP implementation for working with Forte API",
+  "require": {
+    "php": ">=5.4.0",
+    "chrislondon/generic-api": "dev-master"
+  },
+  "autoload": {
+    "psr-0" : {
+      "ChrisLondon\\ForteApi" : "src"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.4.*"
+  },
+  "config": {
+    "bin-dir":"bin/"
+  }
+}
