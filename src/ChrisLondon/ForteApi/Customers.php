@@ -2,25 +2,32 @@
 
 namespace ChrisLondon\ForteApi;
 
+use ChrisLondon\ForteApi\Models\Customer;
+
 class Customers extends Api
 {
-	public function get($accountId, $locationId, $customerId = null)
+	public function get($customerId = null)
+	{
+		return $this->endpoint->get();
+	}
+
+	public function post(Customer $customer)
 	{
 
 	}
 
-	public function post($accountId, $locationId)
+	public function put(Customer $customer)
 	{
 
 	}
 
-	public function put($accountId, $locationId, $customerId)
+	public function delete($customerId)
 	{
 
 	}
 
-	public function delete($accountId, $locationId, $customerId)
+	public function getEndPointUri()
 	{
-
+		return 'customers';
 	}
 }

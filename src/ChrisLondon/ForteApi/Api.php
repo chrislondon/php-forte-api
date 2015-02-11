@@ -3,6 +3,7 @@
 namespace ChrisLondon\ForteApi;
 
 use ChrisLondon\GenericApi\Api as GenericApi;
+use ChrisLondon\GenericApi\Endpoint;
 use ChrisLondon\GenericApi\RequestHandler\Curl;
 use ChrisLondon\GenericApi\ResponseHandler\Json;
 
@@ -18,6 +19,15 @@ class Api
 	 */
 	protected $api;
 
+	/**
+	 * @var Endpoint
+	 */
+	protected $endpoint;
+
+
+	/**
+	 * @param Config $config
+	 */
 	public function __construct(Config $config)
 	{
 		$this->config = $config;
@@ -27,5 +37,15 @@ class Api
 		];
 
 		$this->api = new GenericApi(new Curl($curlOptions), new Json);
+
+		$this->endpoint = new Endpoint(
+			$config->getBaseUri() . '/' . $this->getEndPointUri(),
+			$this->api
+		);
+	}
+
+	public function getEndPointUri()
+	{
+		throw new \Exception('getEndPointUri function not initiated');
 	}
 }
