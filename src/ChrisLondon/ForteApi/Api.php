@@ -33,7 +33,10 @@ class Api
 		$this->config = $config;
 
 		$curlOptions = [
-			CURLOPT_USERPWD => $config->getUserPwd()
+			CURLOPT_USERPWD => $config->getUserPwd(),
+			CURLOPT_HTTPHEADER => [
+				'X-Forte-Auth-Account-Id: ' . $config->getAccountId()
+			]
 		];
 
 		$this->api = new GenericApi(new Curl($curlOptions), new Json);

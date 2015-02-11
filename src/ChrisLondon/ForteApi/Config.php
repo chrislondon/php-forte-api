@@ -17,6 +17,11 @@ class Config
 		$this->locationId = $locationId;
 	}
 
+	public function getAccountId()
+	{
+		return $this->accountId;
+	}
+
 	public function getUserPwd()
 	{
 		return $this->loginId . ':' . $this->secureTransactionKey;
