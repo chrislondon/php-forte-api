@@ -5,7 +5,6 @@ namespace ChrisLondon\ForteApi;
 use ChrisLondon\GenericApi\Api as GenericApi;
 use ChrisLondon\GenericApi\Endpoint;
 use ChrisLondon\GenericApi\RequestHandler\Curl;
-use ChrisLondon\GenericApi\ResponseHandler\Json;
 
 class Api
 {
@@ -39,7 +38,7 @@ class Api
 			]
 		];
 
-		$this->api = new GenericApi(new Curl($curlOptions), new Json);
+		$this->api = new GenericApi(new Curl($curlOptions), new ResponseHandler);
 
 		$this->endpoint = new Endpoint(
 			$config->getBaseUri() . '/' . $this->getEndPointUri(),

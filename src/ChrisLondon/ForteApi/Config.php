@@ -13,8 +13,8 @@ class Config
 	public function __construct($loginId, $secureTransactionKey, $accountId, $locationId) {
 		$this->loginId = $loginId;
 		$this->secureTransactionKey = $secureTransactionKey;
-		$this->accountId = $accountId;
-		$this->locationId = $locationId;
+		$this->accountId = 'acc_' . $accountId;
+		$this->locationId = 'loc_' . $locationId;
 	}
 
 	public function getAccountId()
