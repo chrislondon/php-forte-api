@@ -9,8 +9,6 @@ class PayMethods extends Api
 {
 	public function get($accountId, $locationId, $payMethodId = null)
 	{
-		// 0GbEl25Rr0
-		// T0EaOo6r0Pu02
 		$options = (new Options())
 			->setUri("/accounts/$accountId/locations/$locationId");
 
